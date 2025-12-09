@@ -1,0 +1,162 @@
+/* css/style.css
+   Student Portfolio - basic responsive styling
+   Demonstrates: floats, flexbox, semantic layout
+*/
+
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; }
+
+body {
+  line-height: 1.4;
+  background: #f5e3f0;
+  color: #222;
+}
+
+/* ====== NAVBAR (common) ====== */
+header {
+  background: #0b5cff;
+  color: white;
+  padding: 12px 20px;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.brand {
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 16px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+
+.nav-links a:hover {
+  background: rgba(255,255,255,0.12);
+}
+
+/* Page container */
+.container {
+  max-width: 1000px;
+  margin: 24px auto;
+  padding: 0 16px;
+}
+
+/* ====== HERO (uses float for demonstration) ====== */
+.hero {
+  background: white;
+  padding: 18px;
+  border-radius: 8px;
+  overflow: auto; /* contains floated elements */
+  margin-bottom: 18px;
+}
+
+.hero img.profile {
+  float: left; /* float used here as required */
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 16px;
+  border: 3px solid #e6eefc;
+}
+
+.hero .intro {
+  max-width: calc(100% - 170px);
+}
+
+/* ====== ABOUT PAGE ====== */
+.about-card {
+  background: white;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid #e6e9ef;
+}
+
+/* ====== SKILLS/PROJECTS (Flexbox cards) ====== */
+.cards {
+  display: flex;  /* flexbox alignment */
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+.card {
+  flex: 1 1 280px; /* responsive card: grows, shrinks, base 280px */
+  padding: 12px;
+  border-radius: 8px;
+  border: 2px solid #ddd;
+  min-width: 220px;
+  background: white;
+}
+
+/* Example background colors for cards - keep subtle */
+.card.skill1 { background: #fff7f0; }
+.card.skill2 { background: #f0fff6; }
+.card.skill3 { background: #f0f6ff; }
+
+.card h3 { margin-bottom: 6px; }
+
+/* ====== CONTACT FORM ====== */
+form.contact-form {
+  background: white;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid #e6e9ef;
+}
+
+form .row { margin-bottom: 12px; }
+label { display: block; margin-bottom: 6px; font-weight: 600; }
+input[type="text"],
+input[type="email"],
+input[type="subject"],
+textarea {
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 0.95rem;
+}
+
+textarea { min-height: 120px; resize: vertical; }
+
+button.submit-btn {
+  background: #0b5cff;
+  color: white;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button.submit-btn:hover { opacity: 0.95; }
+
+/* ====== FOOTER ====== */
+footer {
+  max-width: 1000px;
+  margin: 18px auto;
+  text-align: center;
+  color: #666;
+  padding: 12px;
+}
+
+/* ====== Responsive ====== */
+@media (max-width: 700px) {
+  .nav-links { display: none; } /* keep simple for this assignment */
+  .hero img.profile { float: none; display:block; margin: 0 auto 12px auto; width:120px; height:120px; }
+  .hero .intro { max-width: 100%; }
+  .cards { flex-direction: column; }
+}
